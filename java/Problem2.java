@@ -21,7 +21,7 @@ public class Problem1 {
         int limit = 4000000;
         int sum = 0;
         
-        while (secondFibonacci < limit)
+        while (currentFibonacci < limit)
         {
             if (currentFibonacci % 2 == 0)
             {
