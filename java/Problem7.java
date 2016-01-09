@@ -1,13 +1,16 @@
+
+import static java.lang.Math.sqrt;
+
 /**
  * By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
  * What is the 10 001st prime number?
  * 
- * Build time on my system: 1 second
+ * Build time on my system: 0 seconds
  * Potential for higher efficiency
  * 
  * @author thejocin1
  */
-public class Problem3 {
+public class Problem7 {
 
     /**
      * @param args the command line arguments
@@ -23,7 +26,7 @@ public class Problem3 {
             int checkPrime = 2;
             boolean isPrime = true;
             
-            while (checkPrime <= number / 2 && isPrime == true)
+            while (checkPrime <= sqrt(number) && isPrime == true)
             {
                 if (number % checkPrime == 0)
                 {
