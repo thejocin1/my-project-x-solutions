@@ -2,12 +2,12 @@
  * By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
  * What is the 10 001st prime number?
  * 
- * Build time on my system: 11 seconds
+ * Build time on my system: 1 second
  * Potential for higher efficiency
  * 
- * @author Thejocin1
+ * @author thejocin1
  */
-public class Problem7 {
+public class Problem3 {
 
     /**
      * @param args the command line arguments
@@ -21,24 +21,25 @@ public class Problem7 {
         while (iteration <= limit)
         {
             int checkPrime = 2;
-            int isPrime = 1;
+            boolean isPrime = true;
             
-            while (checkPrime <= number / 2)
+            while (checkPrime <= number / 2 && isPrime == true)
             {
                 if (number % checkPrime == 0)
                 {
-                   isPrime = 0;
+                   isPrime = false;
                 }
                 checkPrime++;
             }
             
-            if (isPrime == 1)
+            if (isPrime == true)
             {
                 iteration++;
             }
             
             number++;
         }
+        
         System.out.println("The " + (iteration - 1) + "th prime number is " + (number - 1));
     }
     
