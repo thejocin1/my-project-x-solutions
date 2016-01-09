@@ -1,53 +1,46 @@
 /**
- * The prime factors of 13195 are 5, 7, 13 and 29.
- * What is the largest prime factor of the number 600851475143 ?
+ * By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+ * What is the 10 001st prime number?
  * 
- * Build time on my system: Way too long for practicality
- * Potential for higher efficiency and readability
+ * Build time on my system: 1 second
+ * Potential for higher efficiency
  * 
  * @author thejocin1
  */
-public class Problem3 {
+public class Problem7 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
 
-        boolean found = false;
-        long number = 600_851_475_143L;
-        long factor = number / 2;
+        int iteration = 1;
+        int limit = 10001;
+        int number = 2;
         
-        while (found == false)
+        while (iteration <= limit)
         {
-            if (number % factor == 0)
+            int checkPrime = 2;
+            boolean isPrime = true;
+            
+            while (checkPrime <= number / 2 && isPrime == true)
             {
-                long checkPrime = 2;
-                boolean isPrime = true;
-
-                while (checkPrime <= factor / 2 && isPrime == true)
+                if (number % checkPrime == 0)
                 {
-                    if (factor % checkPrime == 0)
-                    {
-                       isPrime = false;
-                    }
-                    
-                    checkPrime++;
+                   isPrime = false;
                 }
-
-                if (isPrime == true)
-                {
-                    found = true;
-                }
+                checkPrime++;
             }
             
-            if (found == false)
+            if (isPrime == true)
             {
-                factor--;     
+                iteration++;
             }
+            
+            number++;
         }
         
-        System.out.println("The largest prime factor of the number " + number + " is " + factor);
+        System.out.println("The " + (iteration - 1) + "th prime number is " + (number - 1));
     }
     
 }
